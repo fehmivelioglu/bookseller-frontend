@@ -1,0 +1,38 @@
+<a class="mt-2" mat-raised-button color="accent" routerLink="/admin/category">
+  <mat-icon>add</mat-icon>
+  Yeni Kategori Ekle
+</a>
+<table mat-table [dataSource]="datasource">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="no">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let categories"> {{categories.no}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef > Kategori ismi </th>
+    <td mat-cell *matCellDef="let categories" > {{categories.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+
+    <th mat-header-cell *matHeaderCellDef > İşlemler
+
+    </th>
+    <td mat-cell *matCellDef="let categories" > <a mat-raised-button color="primary"
+        [routerLink]="['/admin/category',categories._id]" >
+        <mat-icon class="mr-2">update</mat-icon>Düzenle
+      </a>
+      <button class="ml-3" mat-raised-button color="warn" (click)="deleteCategory(categories._id)">
+      <mat-icon class="mr-2">delete</mat-icon>Sil
+      </button>
+    </td>
+
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

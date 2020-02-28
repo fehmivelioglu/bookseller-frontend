@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <h2>{{title}}</h2>
+    <form [formGroup]="categoryForm" class="form-container" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Kategori ismi</mat-label>
+        <input formControlName="name" matInput>
+        <mat-error *ngIf="this.categoryForm.controls.name.invalid">
+          <div *ngIf="this.categoryForm.controls.name.hasError('required')">Kategori ismi giriniz.!</div>
+        </mat-error>
+      </mat-form-field>
+      <button class="mt-2" type="submit" mat-raised-button color="primary" *ngIf="progressBar==false">
+        {{btnText}}</button>
+      <mat-progress-bar mode="indeterminate" *ngIf="progressBar==true"></mat-progress-bar>
+    </form>
+
+  </div>
+</div>

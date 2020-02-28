@@ -1,0 +1,64 @@
+
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <h2>{{title}}</h2>
+    <form [formGroup]="bookForm" class="form-container" (ngSubmit)="onSubmit()">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Kategori ismi</mat-label>
+        <input formControlName="categoryBy" matInput [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCategoryName">
+
+          <mat-option *ngFor="let item of categories"  [value]="item">{{item.name}}</mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="this.bookForm.controls.categoryBy.invalid">
+          <div *ngIf="this.bookForm.controls.categoryBy.hasError('required')">Kategori ismini giriniz.!</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Kitap ismi</mat-label>
+        <!-- <app-ngx-editor ></app-ngx-editor> -->
+        <input formControlName="title" matInput>
+        <mat-error *ngIf="this.bookForm.controls.title.invalid">
+          <div *ngIf="this.bookForm.controls.title.hasError('required')">Kitap ismi giriniz.!</div>
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Yazar ismi</mat-label>
+        <input formControlName="author" matInput>
+        <mat-error *ngIf="this.bookForm.controls.author.invalid">
+          <div *ngIf="this.bookForm.controls.author.hasError('required')">Yazar ismi giriniz.!</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Kitap fiyatı</mat-label>
+        <input formControlName="price" matInput>
+        <mat-error *ngIf="this.bookForm.controls.price.invalid">
+          <div *ngIf="this.bookForm.controls.price.hasError('required')">Kitabın fiyatini giriniz.!</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Kitap adeti</mat-label>
+        <input formControlName="stock" matInput>
+        <mat-error *ngIf="this.bookForm.controls.stock.invalid">
+          <div *ngIf="this.bookForm.controls.stock.hasError('required')">Kitap adeti giriniz.!</div>
+
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <input type="file" (change)="upload($event)">
+      </div>
+
+      <button class="mt-2" type="submit" mat-raised-button color="primary" *ngIf="progressBar==false">
+        {{btnText}}</button>
+      <mat-progress-bar mode="indeterminate" *ngIf="progressBar==true"></mat-progress-bar>
+    </form>
+
+  </div>
+</div>
