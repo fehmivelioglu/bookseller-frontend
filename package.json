@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node index.js",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -37,12 +37,12 @@
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "typescript": "~3.7.5",
-    "zone.js": "~0.10.2",
-    "@angular-devkit/build-angular": "~0.900.3",
-    "@angular/language-service": "~9.0.2"
+    "zone.js": "~0.10.2"
+
   },
   "devDependencies": {
-
+    "@angular-devkit/build-angular": "~0.900.3",
+    "@angular/language-service": "~9.0.2",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
@@ -59,7 +59,7 @@
     "tslint": "~5.18.0"
   },
   "engines": {
-    "node": "13.9.0",
-    "npm": "6.13.7"
+    "node": "~13.9.0",
+    "npm": "~6.13.7"
   }
 }
