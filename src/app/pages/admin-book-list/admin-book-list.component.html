@@ -47,13 +47,15 @@
     <th mat-header-cell *matHeaderCellDef> İşlemler
 
     </th>
-    <td mat-cell *matCellDef="let book"> <a mat-raised-button color="primary"
-        [routerLink]="['/admin/book',book._id]" >
+    <td mat-cell *matCellDef="let book">
+      <!-- <a mat-raised-button color="primary" [routerLink]="['/admin/book',book._id]" > -->
+        <a mat-raised-button color="primary" [routerLink]="['/editlogin',book._id]">
         <mat-icon class="mr-2">update</mat-icon>Düzenle
       </a>
-      <button class="ml-3" mat-raised-button color="warn" (click)="deleteBook(book._id)">
-      <mat-icon class="mr-2">delete</mat-icon>Sil
-      </button>
+      <a class="ml-3" mat-raised-button color="warn" routerLink="/login" (click)="deleteBook(book._id)">
+      <!-- <button class="ml-3" mat-raised-button color="warn" (click)="deleteBook(book._id)"> -->
+      <mat-icon class="mr-2" >delete</mat-icon>Sil</a>
+      <!-- Sil      </button> -->
     </td>
 
   </ng-container>

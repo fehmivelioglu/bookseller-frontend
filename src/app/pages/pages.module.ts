@@ -16,6 +16,8 @@ import { BookNeweditComponent } from './book-newedit/book-newedit.component';;
 import{CategoryMenuComponent} from "../nav/category-menu/category-menu.component";
 import { BookComponent } from './book/book.component'
 import { NgxEditorModule } from 'ngx-editor';
+import { LoginComponent } from './login/login.component';
+import { EditLoginComponent } from './edit-login/edit-login.component';
 @NgModule({
   declarations: [
     MainLayoutComponent,
@@ -28,7 +30,9 @@ import { NgxEditorModule } from 'ngx-editor';
     AdminBookListComponent,
     BookNeweditComponent,
     CategoryMenuComponent,
-    BookComponent
+    BookComponent,
+    LoginComponent,
+    EditLoginComponent
   ],
   imports: [CommonModule, RouterModule, MaterialModule,NgxEditorModule]
 })

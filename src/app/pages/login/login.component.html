@@ -1,0 +1,60 @@
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+      <div class="d-flex justify-content-center">
+        <div class="brand_logo_container">
+          <img src="https://www.yeniasya.com.tr/Sites/YeniAsya/Upload/images/Content/2019/11/05/book.jpg" class="brand_logo" alt="Logo">
+        </div>
+      </div>
+
+      <div class="container form_container ">
+
+      <div class="row">
+<form class="col-12">
+      <div class="d-flex justify-content-center mt-3 login_container">
+
+
+      </div>
+
+          <div class="input-group mb-3">
+
+
+            <div class="input-group-append">
+
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+
+            <input type="text" name="username" class="form-control input_user" value="" placeholder="username" [(ngModel)]="username">
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq5bCn6_MOSVviLi1BUQ6YuccreI3hy_dW1AAupVZ-7THySK88&s" height="50" width="200">
+            <!-- <input type="text" name="" class="form-control input_pass" value="" placeholder="e-mail"> -->
+          </div>
+
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+       <div class="row">
+
+      <div class="alert alert-danger col-12" role="alert"  >
+        Username en az 3 karakterden oluşmalıdır.
+      </div>
+       </div>
+
+      </div>
+
+      <div class="d-flex justify-content-center mt-3 login_container">
+
+        <button type="button" name="button" class="btn login_btn" (click)="onSubmit()"   >Onayla</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class CategoryService {
-
+deleteCategoryId;
   constructor(@Inject ('apiUrl') private apiUrl,private http:HttpClient) { }
 
   // getAllCategories(){

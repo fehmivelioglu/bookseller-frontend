@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BookService {
-
+deletebookId;
   constructor(@Inject ('apiUrl') private apiUrl,private http:HttpClient) { }
 
   addBook(book:Book){
@@ -19,8 +19,8 @@ export class BookService {
   updateBook(bookId:String,book:Book){
    return this.http.put<any>(this.apiUrl+"/book/"+bookId,book);
   }
-  deleteBook(bookId:String){
-   return this.http.delete<any>(this.apiUrl+"/book/"+bookId);
+  deleteBook(deletebookId:String){
+   return this.http.delete<any>(this.apiUrl+"/book/"+deletebookId);
   }
   saveBookImage(image){
     return this.http.post<any>(this.apiUrl+"/book/saveImage",image);
